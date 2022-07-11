@@ -1,0 +1,76 @@
+html, body, main, section, h2, ul, li, p, img, button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+}
+
+.container {
+    width: 60%;
+    margin: 50px auto;
+}
+
+.tarefas {
+    box-shadow: 4px 4px 40px -16px rgb(0 0 0 / 30%);
+    border-radius: 8px;
+    padding: 30px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarefas h2 {
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.tarefas ul {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarefas ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 15px;
+    background-color: #f1f3f5;
+    border-radius: 8px;
+}
+
+.tarefas ul li .tarefa-nome {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.tarefas ul li .ponto-laranja {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #f58737;
+}
+
+.tarefas ul li .ponto-amarelo {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #d6e340;
+}
+
+.tarefas ul li .ponto-verde {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #77e864;
+}
+
+.tarefas ul li button {
+    height: 18px;
+}
+
+.tarefas ul li button img {
+    height: 100%;
+}
