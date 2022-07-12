@@ -50,10 +50,13 @@ function criarCardTarefa(tarefaAtual) {
     return li
 }
 
-// let botaoLixeira = document.querySelector("li")
-// console.log(botaoLixeira)
-// botaoLixeira.addEventListener("click", function(event){
-//     botaoLixeira.setAttribute("hidden", "")
-//     console.log(botaoLixeira)
-    
-// })
+
+let sectionProdutos = document.querySelector(".tarefas")
+sectionProdutos.addEventListener("click", removerItem)
+
+function removerItem(event){
+    if(event.target.tagName == "IMG") {
+        let ul = event.target.closest("ul")
+        ul.removeChild(event.target.closest("li"))
+    }
+}

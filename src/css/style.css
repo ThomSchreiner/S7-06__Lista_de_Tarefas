@@ -73,4 +73,5 @@ html, body, main, section, h2, ul, li, p, img, button {
 
 .tarefas ul li button img {
     height: 100%;
+    cursor: pointer;
 }
