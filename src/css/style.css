@@ -1,27 +1,123 @@
-html, body, main, section, h2, ul, li, p, img, button {
+html, body, header, figure, nav, input, form, option, select, main, section, h2, ul, li, p, img, button {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     list-style: none;
     border: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+body header {
+    height: 85px;
+    box-shadow: 4px 0 40px -16px rgb(0 0 0 / 30%);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+body header nav {
+    width: 65%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body header nav .logo p {
+    color: #3b5bdb;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+body header nav .barra-pesquisa {
+    background-color: #f1f3f5;
+    height: 55px;
+    display: flex;
+    border-radius: 8px;
+    
+}
+
+body header nav .barra-pesquisa input {
+    background-color: #f1f3f5;
+    font-size: 16px;
+    display: block;
+    height: 100%;
+    width: 300px;
+    padding: 0 20px;
+    border-radius: 8px 0 0 8px;
+    
+}
+
+body header nav .barra-pesquisa button {
+    height: 100%;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+}
+
+body header nav .barra-pesquisa button img {
+    height: 100%;
+    padding: 25%;
 }
 
 .container {
-    width: 60%;
-    margin: 50px auto;
+    width: 65%;
+    margin: 135px auto 50px auto;
 }
 
-.tarefas {
+.container .adicionar-tarefa form div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.container .adicionar-tarefa form div input {
+    background-color: #f1f3f5;
+    height: 55px;
+    font-size: 16px;
+    width: 375px;
+    border-radius: 8px;
+    padding: 0 20px;
+}
+
+.container .adicionar-tarefa form div select {
+    background-color: #f1f3f5;
+    height: 55px;
+    font-size: 16px;
+    width: 375px;
+    border-radius: 8px;
+    padding: 0 20px;
+    cursor: pointer;
+    color: #757575;
+}
+
+.container .adicionar-tarefa form div select option {
+    color: black
+}
+
+.container .adicionar-tarefa form button {
+    height: 55px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 0 20px;
+    background-color: #3b5bdb;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container section {
     box-shadow: 4px 4px 40px -16px rgb(0 0 0 / 30%);
     border-radius: 8px;
-    padding: 30px;
+    padding: 40px;
     gap: 10px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
-.tarefas h2 {
-    margin-bottom: 10px;
+.container h2 {
+    margin-bottom: 20px;
     border-radius: 8px;
 }
 
