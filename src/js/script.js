@@ -9,7 +9,7 @@ function renderizarTarefa(valorTarefa) {
 
     for(let i = 0; i < valorTarefa.length; i++) {
 
-        let liTarefa = criarCardTarefa(valorTarefa[i])
+        let liTarefa = criarCardTarefa(valorTarefa[i], i)
         let ul = ""
         
         if(valorTarefa[i].tipo == "urgente") {
@@ -27,7 +27,7 @@ function renderizarTarefa(valorTarefa) {
 
 renderizarTarefa(tarefas)
 
-function criarCardTarefa(tarefaAtual) {
+function criarCardTarefa(tarefaAtual, id) {
 
     let li = document.createElement("li")
     let divNome = document.createElement("div")
@@ -41,6 +41,7 @@ function criarCardTarefa(tarefaAtual) {
     pNome.innerText = tarefaAtual.titulo
     img.src = "src/img/Lixeira.png"
     img.alt = "Icone Lixeira"
+    img.id = id
     
     divNome.appendChild(divPonto)
     divNome.appendChild(pNome)
@@ -58,8 +59,8 @@ sectionProdutos.addEventListener("click", removerItem)
 
 function removerItem(event){
     if(event.target.tagName == "IMG") {
-        let ul = event.target.closest("ul")
-        ul.removeChild(event.target.closest("li"))
+        tarefas.splice(event.target.id, 1)
+        renderizarTarefa(tarefas)
     }
 }
 
@@ -90,7 +91,12 @@ function adicionarItem(event) {
 
 // Campo de Pesquisa
 let divPesquisa = document.querySelector(".barra-pesquisa")
-divPesquisa.addEventListener("click", filtrarPesquisa)
+divPesquisa.addEventListener("click", (event) => {
+    if(event.target.tagName == "IMG"){
+        filtrarPesquisa(event)
+    }
+})
+
 divPesquisa.addEventListener("keyup", filtrarPesquisa)
 
 function filtrarPesquisa(event) {
